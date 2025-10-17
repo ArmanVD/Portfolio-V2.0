@@ -2,11 +2,12 @@ name: Deploy Astro (main + dev)
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [main, dev]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: ./astro-portfolio-v2.0
@@ -18,7 +19,7 @@ jobs:
       - name: Use Node 20
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install deps
         run: npm ci
@@ -44,7 +45,7 @@ jobs:
         uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: -avzr --delete
-          path: dist/
+          path: astro-portfolio-v2.0/dist/
           remote_path: ${{ steps.choose.outputs.PATH }}/dist/
           remote_host: ${{ secrets.VPS_HOST }}
           remote_user: ${{ secrets.VPS_USER }}
