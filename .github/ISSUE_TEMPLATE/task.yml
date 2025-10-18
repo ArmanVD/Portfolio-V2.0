@@ -1,0 +1,26 @@
+name: "🧩 Development Task"
+description: "Define a specific development task."
+labels: ["Should Have", "task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧩 Development Task
+        Create a focused technical task or sub-task.
+  - type: textarea
+    id: description
+    attributes:
+      label: "Task details"
+      placeholder: "Implement responsive layout for hero section..."
+      description: "Describe what needs to be done."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "MoSCoW Priority"
+      options:
+        - Must Have
+        - Should Have
+        - Could Have
+        - Won’t Have (this time)
