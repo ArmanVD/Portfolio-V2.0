@@ -1,0 +1,31 @@
+name: "💡 Feature Request"
+description: "Suggest a new feature or improvement."
+labels: ["Should Have", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Feature Request
+        Propose a new feature or improvement.
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the feature"
+      placeholder: "I’d like to add..."
+      description: "Be specific about what you want to add or change."
+    validations:
+      required: true
+  - type: textarea
+    id: benefit
+    attributes:
+      label: "Why is this needed?"
+      placeholder: "This improves user experience by..."
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "MoSCoW Priority"
+      options:
+        - Must Have
+        - Should Have
+        - Could Have
+        - Won’t Have (this time)
