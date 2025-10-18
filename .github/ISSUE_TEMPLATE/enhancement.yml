@@ -1,0 +1,22 @@
+name: "✨ Enhancement"
+description: "Improve an existing feature or component."
+labels: ["Could Have", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Enhancement
+        Suggest improvements or refinements.
+  - type: textarea
+    id: description
+    attributes:
+      label: "What can be improved?"
+      placeholder: "The hero animation could be smoother..."
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "MoSCoW Priority"
+      options:
+        - Must Have
+        - Should Have
+        - Could Have
