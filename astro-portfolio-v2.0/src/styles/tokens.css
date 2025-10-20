@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light dark;
+
+  /* === FONT FAMILY === */
+  --font-display: "Unique", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* === FONT WEIGHTS === */
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* === COLOR TOKENS === */
+  --bg-light: hsl(30, 67%, 98%);
+  --bg-dark: hsl(0, 45%, 4%);
+
+  --text-light: hsl(0, 78%, 24%);
+  --text-dark: hsl(36, 61%, 87%);
+}
