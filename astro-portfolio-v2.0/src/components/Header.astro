@@ -1,0 +1,24 @@
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/photography", label: "Photography" },
+  { href: "/journal", label: "Journal" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+const current = Astro.url.pathname; // for example: "/work"
+---
+
+<header class="site-header">
+  <nav class="site-nav">
+    {
+      links.map((link) => (
+        <a href={link.href} class="nav-link" aria-current={current === link.href ? "page" : undefined}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

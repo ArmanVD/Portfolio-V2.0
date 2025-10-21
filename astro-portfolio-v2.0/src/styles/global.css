@@ -1,0 +1,131 @@
+/* ===== Global base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: light-dark(var(--clr-bg-light), var(--clr-bg-dark));
+  color: light-dark(var(--clr-primary), var(--clr-secondary));
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 100vw;
+  min-width: 100dvw;
+}
+
+/* ===== Typography ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+h1 {
+  font-size: var(--fs-h1, 4rem);
+  font-weight: var(--fw-bold);
+} /* 64px */
+h2 {
+  font-size: var(--fs-h2, 3rem);
+  font-weight: var(--fw-semibold);
+} /* 48px */
+h3 {
+  font-size: var(--fs-h3, 2.5rem);
+  font-weight: var(--fw-medium);
+} /* 40px */
+h4 {
+  font-size: var(--fs-h4, 2.25rem);
+  font-weight: var(--fw-medium);
+} /* 36px */
+
+p {
+  font-size: var(--fs-md, 1rem);
+  font-weight: var(--fw-regular);
+} /* 16px */
+
+/* ===== Links ===== */
+
+a {
+  color: inherit; /* harmonize with text color */
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.5s ease-in-out;
+  text-underline-offset: 0.25em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid light-dark(var(--clr-primary), var(--clr-secondary));
+  outline-offset: 1.5px;
+  border-radius: 25px;
+}
+
+a:active {
+  color: light-dark(var(--clr-primary), var(--clr-secondary));
+  scale: 1.1;
+}
+
+.nav-link[aria-current="page"] {
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ===== Buttons (minimal) ===== */
+
+button,
+.btn {
+  font: inherit;
+  font-weight: var(--fw-semibold, 600);
+  padding: 0.5em;
+  border-radius: 25px;
+  background: light-dark(var(--clr-primary), var(--clr-secondary));
+  color: light-dark(var(--clr-bg-light), var(--clr-bg-dark));
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+button:hover,
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== Navigation label style ===== */
+
+.site-header {
+  width: 100vw;
+  width: 100dvw;
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  width: 100dvw;
+  padding: 0.5em;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  color: currentColor;
+}

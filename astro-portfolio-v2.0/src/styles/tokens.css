@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light dark;
+
+  /* === FONT FAMILY === */
+
+  --font-heading: "Unique", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Archivo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* === FONT WEIGHTS === */
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* === FONT SIZES === */
+
+  font-size: 16px;
+
+  --fs-h1: 4rem; /* 64px  */
+  --fs-h2: 3rem; /* 48px  */
+  --fs-h3: 2.5rem; /* 40px  */
+  --fs-h4: 2.25rem; /* 36px  */
+  --fs-lg: 1.125rem; /* 18px  */
+  --fs-md: 1rem; /* 16px  */
+  --fs-sm: 0.875rem; /* 14px  */
+  --fs-label: 1rem; /* 16px  */
+
+  /* === LINE HEIGHT === */
+
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+
+  /* === LETTER SPACING === */
+  --ls-heading: 0.02em;
+  --ls-body: 0em;
+
+  /* === COLOUR TOKENS === */
+
+  --clr-primary: hsl(0, 78%, 24%);
+  --clr-secondary: hsl(36, 61%, 87%);
+
+  --clr-bg-light: hsl(30, 67%, 98%);
+  --clr-bg-dark: hsl(0, 45%, 4%);
+
+  --clr-gray-100: hsl(210, 17%, 98%);
+  --clr-gray-200: hsl(210, 14%, 83%);
+  --clr-gray-300: hsl(210, 9%, 31%);
+  --clr-gray-400: hsl(210, 11%, 15%);
+
+  --clr-accent-1: hsl(0, 79%, 44%);
+  --clr-accent-2: hsl(0, 78%, 64%);
+  --clr-accent-3: hsl(36, 61%, 67%);
+  --clr-accent-4: hsl(36, 61%, 47%);
+}
