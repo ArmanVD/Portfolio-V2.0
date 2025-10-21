@@ -73,13 +73,14 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid light-dark(var(--clr-accent-2), var(--clr-accent-4));
-  outline-offset: 3px;
+  outline: 2px solid light-dark(var(--clr-primary), var(--clr-secondary));
+  outline-offset: 1.5px;
   border-radius: 25px;
 }
 
 a:active {
-  color: light-dark(var(--clr-accent-2), var(--clr-accent-4));
+  color: light-dark(var(--clr-primary), var(--clr-secondary));
+  scale: 1.1;
 }
 
 .nav-link[aria-current="page"] {
@@ -119,6 +120,7 @@ button:hover,
   justify-content: space-around;
   width: 100vw;
   width: 100dvw;
+  padding: 0.5em;
 }
 
 .nav-link {
