@@ -1,3 +1,6 @@
+@import "./tokens.css";
+@import "./fonts.css";
+
 /* ===== Global base ===== */
 * {
   margin: 0;
@@ -107,20 +110,38 @@ button:hover,
   opacity: 0.9;
 }
 
-/* ===== Navigation label style ===== */
-
+/* ===== Site Navigation ===== */
 .site-header {
   width: 100vw;
   width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .site-nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   width: 100dvw;
-  padding: 0.5em;
+  height: 100vh;
+  height: 100dvh;
+  gap: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    height: auto;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    padding: 0.5em;
+    gap: 0;
+  }
 }
 
 .nav-link {
@@ -128,4 +149,18 @@ button:hover,
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
   color: currentColor;
+}
+
+/* ===== Site Footer ===== */
+
+.site-footer {
+  width: 100vw;
+  width: 100dvw;
+}
+
+.site-footer-text {
+  text-align: center;
+  padding: 1em;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-bold);
 }
