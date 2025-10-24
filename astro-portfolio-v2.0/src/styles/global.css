@@ -199,6 +199,10 @@ html:has(#navToggle:checked) {
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.3s ease;
   z-index: 105;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* When checked, show overlay */

@@ -1,7 +1,73 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getStoryblokApi } from "../lib/storyblok";
+import { sbWebp } from "../lib/asset";
+
+const api = getStoryblokApi();
+const version = import.meta.env.DEV ? "draft" : "published";
+
+let data: any;
+try {
+  const res = await api.get("cdn/stories/home", { version });
+  data = res?.data;
+} catch (err) {
+  console.error("Storyblok fetch failed:", err);
+  data = undefined;
+}
+
+// basic shape so TS can help a bit
+type SBImageField = { filename?: string };
+type HomeBlock = {
+  body?: any[];
+  title_1?: string;
+  title1?: string;
+  title_2?: string;
+  title2?: string;
+  title_3?: string;
+  title3?: string;
+  title_4?: string;
+  title4?: string;
+  subtitle_1?: string;
+  subtitle1?: string;
+  subtitle_2?: string;
+  subtitle2?: string;
+  subtitle_3?: string;
+  subtitle3?: string;
+  subtitle_4?: string;
+  subtitle4?: string;
+  cutout?: SBImageField;
+};
+
+const content: HomeBlock = data?.story?.content ?? {};
+const block: HomeBlock = Array.isArray(content.body) && content.body.length > 0 ? (content.body[0] as HomeBlock) : content;
+
+const pick = (obj: Record<string, unknown> | undefined, a: string, b: string): string | undefined => (obj?.[a] ?? obj?.[b]) as string | undefined;
+
+const titleParts = [
+  pick(block, "title_1", "title1"),
+  pick(block, "title_2", "title2"),
+  pick(block, "title_3", "title3"),
+  pick(block, "title_4", "title4"),
+].filter(Boolean) as string[];
+
+const subtitles = [
+  pick(block, "subtitle_1", "subtitle1"),
+  pick(block, "subtitle_2", "subtitle2"),
+  pick(block, "subtitle_3", "subtitle3"),
+  pick(block, "subtitle_4", "subtitle4"),
+].filter(Boolean) as string[];
+
+const cutoutWebp = block.cutout?.filename ? sbWebp(block.cutout.filename) : undefined;
 ---
 
 <BaseLayout title="Home | Arman Voogd">
-  <h1 class="hero-title">Currently under Construction</h1>
+  <section>
+    <h1 aria-label={titleParts.join(" ")}>
+      {titleParts.map((t) => <span>{t}</span>)}
+    </h1>
+
+    {subtitles.length > 0 && <p>{subtitles[0]}</p>}
+
+    {cutoutWebp && <img src={cutoutWebp} alt="Portrait of Arman" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />}
+  </section>
 </BaseLayout>
