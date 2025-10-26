@@ -10,11 +10,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      PUBLIC_STORYBLOK_TOKEN: ${{ secrets.PUBLIC_STORYBLOK_TOKEN }}
+
     defaults:
       run:
         working-directory: ./astro-portfolio-v2.0
-        env:
-      PUBLIC_STORYBLOK_TOKEN: ${{ secrets.PUBLIC_STORYBLOK_TOKEN }}
 
     steps:
       - name: Checkout
