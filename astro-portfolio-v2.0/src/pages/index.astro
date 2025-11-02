@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getStoryblokApi } from "../lib/storyblok";
 import { sbWebp } from "../lib/asset";
+import "../styles/home.css";
 
 const api = getStoryblokApi();
 const version = import.meta.env.DEV ? "draft" : "published";
@@ -61,13 +62,17 @@ const cutoutWebp = block.cutout?.filename ? sbWebp(block.cutout.filename) : unde
 ---
 
 <BaseLayout title="Home | Arman Voogd">
-  <section>
-    <h1 aria-label={titleParts.join(" ")}>
-      {titleParts.map((t) => <span>{t}</span>)}
+  <section class="home-hero">
+    <h1 class="home-hero-title" aria-label="Arman Voogd">
+      {titleParts.map((t, i) => <span class={`home-hero-span-${i + 1}`}>{t}</span>)}
     </h1>
 
-    {subtitles.length > 0 && <p>{subtitles[0]}</p>}
+    {subtitles.length > 0 && <p class="home-hero-subtitle">{subtitles[0]}</p>}
 
-    {cutoutWebp && <img src={cutoutWebp} alt="Portrait of Arman" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />}
+    {
+      cutoutWebp && (
+        <img src={cutoutWebp} class="home-hero-portrait" alt="Portrait of Arman" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />
+      )
+    }
   </section>
 </BaseLayout>

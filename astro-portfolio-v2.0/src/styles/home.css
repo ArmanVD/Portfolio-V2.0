@@ -1,0 +1,37 @@
+.home-hero {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-hero-title {
+  font-size: 200px;
+}
+
+.home-hero-span-1 {
+  z-index: 10;
+}
+
+.home-hero-span-2 {
+  z-index: 6;
+}
+
+.home-hero-span-3 {
+  z-index: 7;
+}
+
+.home-hero-span-4 {
+  z-index: 9;
+}
+
+.home-hero-subtitle {
+  font-size: 24px;
+  margin-top: 1rem;
+  z-index: 5;
+}
+.home-hero-portrait {
+  margin-top: 95px;
+  width: 470px;
+  height: auto;
+  translate: -18px;
+  z-index: 8;
+}
