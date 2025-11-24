@@ -1,7 +1,6 @@
 @import "./tokens.css";
 @import "./fonts.css";
 
-/* ===== Global base ===== */
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +29,6 @@ body {
 main {
   padding: 1em;
 }
-/* ===== Typography ===== */
 
 h1,
 h2,
@@ -65,10 +63,8 @@ p {
   font-weight: var(--fw-regular);
 } /* 16px */
 
-/* ===== Links ===== */
-
 a {
-  color: inherit; /* harmonize with text color */
+  color: inherit;
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: text-decoration 0.5s ease-in-out;
@@ -90,8 +86,6 @@ a:active {
   scale: 1.1;
 }
 
-/* ===== Buttons (minimal) ===== */
-
 button,
 .btn {
   font: inherit;
@@ -108,9 +102,6 @@ button:hover,
   opacity: 0.9;
 }
 
-/* ===== Navigation label style ===== */
-
-/* Base header container */
 .site-header {
   position: sticky;
   top: 0;
@@ -124,7 +115,6 @@ button:hover,
   padding: 1em;
 }
 
-/* Hide default checkbox input */
 .nav-toggle {
   position: fixed;
   width: 1px;
@@ -133,12 +123,10 @@ button:hover,
   pointer-events: none;
 }
 
-/* When menu is open, prevent background scroll */
 html:has(#navToggle:checked) {
   overflow: hidden;
 }
 
-/* Menu toggle button (hamburger + close icons) */
 .menu-btn {
   display: grid;
   place-items: center;
@@ -156,7 +144,6 @@ html:has(#navToggle:checked) {
   padding: 0.25rem;
 }
 
-/* SVG icons inside button */
 .menu-btn .icon {
   position: absolute;
   display: block;
@@ -184,9 +171,6 @@ html:has(#navToggle:checked) {
   transform: rotate(0) scale(1);
 }
 
-/* ====== NAVIGATION ====== */
-
-/* Full-screen overlay for mobile nav */
 .site-nav {
   position: fixed;
   inset: 0;
@@ -205,13 +189,11 @@ html:has(#navToggle:checked) {
   height: 100dvh;
 }
 
-/* When checked, show overlay */
 .site-header:has(#navToggle:checked) .site-nav {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Nav list (mobile layout) */
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -228,23 +210,19 @@ html:has(#navToggle:checked) {
   color: currentColor;
 }
 
-/* Active link */
 .nav-link[aria-current="page"] {
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
 
-/* ====== DESKTOP LAYOUT ====== */
 @media (min-width: 768px) {
-  /* Hide hamburger button + checkbox */
   .menu-btn,
   .nav-toggle {
     display: none;
   }
 
-  /* Inline desktop nav */
   .site-nav {
-    all: unset; /* removes the fixed overlay styles */
+    all: unset;
     display: flex;
     flex-direction: row;
     gap: 2rem;
